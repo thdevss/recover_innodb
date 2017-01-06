@@ -1,12 +1,12 @@
 <?php
 $dbhost = "localhost:3306";
-$dbname = $argv[2];
-$dbuser = $argv[3];
-$dbpwd  = $argv[4];
+$dbname = $argv[1];
+$dbuser = $argv[2];
+$dbpwd  = $argv[3];
 
 mysql_connect($dbhost,$dbuser,$dbpwd) or die(mysql_error());
 
-for ($i = 1; $i <= 69; $i++) {
+for ($i = 1; $i <= $argv[4]; $i++) {
    $dbquery = "CREATE TABLE $dbname.t" . $i . " (id int) ENGINE=InnoDB";
 	
    echo "" . $dbquery . "";
